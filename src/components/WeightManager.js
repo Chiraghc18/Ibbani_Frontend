@@ -30,9 +30,9 @@ const WeightManager = () => {
     
     try {
       if (editingId) {
-        await API.put(`/weight/${editingId}`, formData);
+        await API.put(`/api/weight/${editingId}`, formData);
       } else {
-        await API.post('/weight', formData);
+        await API.post('/api/weight', formData);
       }
       await fetchWeights();
       resetForm();

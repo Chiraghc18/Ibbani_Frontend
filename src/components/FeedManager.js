@@ -31,9 +31,9 @@ const FeedManager = () => {
     
     try {
       if (editingId) {
-        await API.put(`/feed/${editingId}`, formData);
+        await API.put(`/api/feed/${editingId}`, formData);
       } else {
-        await API.post('/feed', formData);
+        await API.post('/api/feed', formData);
       }
       await fetchFeeds();
       resetForm();

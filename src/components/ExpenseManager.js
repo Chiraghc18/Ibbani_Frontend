@@ -30,9 +30,9 @@ const ExpenseManager = () => {
     
     try {
       if (editingId) {
-        await API.put(`/expenses/${editingId}`, formData);
+        await API.put(`/api/expenses/${editingId}`, formData);
       } else {
-        await API.post('/expenses', formData);
+        await API.post('/api/expenses', formData);
       }
       await fetchExpenses();
       resetForm();
