@@ -21,10 +21,10 @@ const Auth = ({ onLogin }) => {
 
       const response = await API.post('/api/auth/login', requestData);
       const { token, user } = response.data;
-      
+
       localStorage.setItem('token', token);
       localStorage.setItem('user', JSON.stringify(user));
-      
+
       onLogin(user);
     } catch (error) {
       const errorMessage = error.response?.data?.message || 

@@ -12,10 +12,8 @@ const PriceCalculator = () => {
   const [lastUpdated, setLastUpdated] = useState('');
 
   useEffect(() => {
-    // Set initial dates and calculate price automatically
     const today = new Date().toISOString().split('T')[0];
     
-    // Try to load saved dates, otherwise set default
     const savedStart = localStorage.getItem('intervalStart');
     const savedEnd = localStorage.getItem('intervalEnd');
     
@@ -23,7 +21,6 @@ const PriceCalculator = () => {
       setIntervalStart(savedStart);
       setIntervalEnd(savedEnd);
     } else {
-      // Set default to last 30 days
       const thirtyDaysAgo = new Date();
       thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
       const defaultStart = thirtyDaysAgo.toISOString().split('T')[0];
@@ -31,18 +28,14 @@ const PriceCalculator = () => {
       setIntervalStart(defaultStart);
       setIntervalEnd(today);
       
-      // Save defaults
       localStorage.setItem('intervalStart', defaultStart);
       localStorage.setItem('intervalEnd', today);
     }
-
-    // Calculate price after a short delay to ensure dates are set
     setTimeout(() => {
       calculatePrice();
     }, 100);
   }, []);
 
-  // Recalculate when dates or profit percent change
   useEffect(() => {
     if (intervalStart && intervalEnd) {
       calculatePrice();
@@ -75,7 +68,6 @@ const PriceCalculator = () => {
       setCalculation(result);
       setLastUpdated(new Date().toLocaleString());
       
-      // Save dates whenever calculation happens
       saveIntervalDates();
     } catch (error) {
       console.error('Error calculating price:', error);
@@ -85,7 +77,6 @@ const PriceCalculator = () => {
   };
 
   const performCalculation = (feeds, weights, expenses, start, end, profit) => {
-    // Date difference calculation
     const dateDiffDays = (a, b) => {
       const startDate = new Date(a);
       const endDate = new Date(b);
@@ -93,7 +84,6 @@ const PriceCalculator = () => {
       return Math.floor((endDate - startDate) / 86400000) + 1;
     };
 
-    // Filter weights for the interval
     const intervalWeights = weights.filter(w => {
       const weightDate = new Date(w.date);
       return weightDate >= new Date(start) && weightDate <= new Date(end);
@@ -102,7 +92,6 @@ const PriceCalculator = () => {
     let totalFeedCost = 0;
     let totalWeightGain = 0;
 
-    // Calculate intervals
     const arr = [];
     for (let i = 0; i < intervalWeights.length - 1; i++) {
       arr.push({
@@ -132,7 +121,6 @@ const PriceCalculator = () => {
       }
     }
 
-    // Calculate feed cost for each interval
     arr.forEach(int => {
       let feedCost = 0;
       const intStart = new Date(int.start);
@@ -166,7 +154,6 @@ const PriceCalculator = () => {
       amount: feedPerKg
     }];
 
-    // Add expenses
     expenses.forEach(expense => {
       const expenseAmount = (expense.percent / 100) * feedPerKg;
       breakdown.push({
@@ -177,14 +164,12 @@ const PriceCalculator = () => {
       subtotal += expenseAmount;
     });
 
-    // Add subtotal row
     breakdown.push({
       component: 'Subtotal',
       details: 'Feed + Expenses',
       amount: subtotal
     });
 
-    // Add profit
     const profitAmount = subtotal * (profit / 100);
     breakdown.push({
       component: 'Profit',
@@ -221,7 +206,6 @@ const PriceCalculator = () => {
         <p className="last-updated">Last Updated: {lastUpdated}</p>
       )}
 
-      {/* PROFIT SECTION */}
       <div className="profit-section">
         <h3 className="sub-header">Profit Settings</h3>
         <div className="form-grid">
@@ -243,7 +227,6 @@ const PriceCalculator = () => {
         </div>
       </div>
 
-      {/* INTERVAL SELECTION */}
       <div className="interval-section">
         <h3 className="sub-header">Calculation Interval</h3>
         <div className="interval-hint">
@@ -274,7 +257,6 @@ const PriceCalculator = () => {
         </div>
       </div>
 
-      {/* LOADING INDICATOR */}
       {loading && (
         <div className="loading-indicator">
           <div className="loading-spinner-small"></div>
@@ -282,7 +264,6 @@ const PriceCalculator = () => {
         </div>
       )}
 
-      {/* INTERVAL BREAKDOWN */}
       {calculation && calculation.intervals && calculation.intervals.length > 0 && (
         <div className="card">
           <h3 className="card-header">📈 Interval-wise Breakdown</h3>
@@ -313,7 +294,6 @@ const PriceCalculator = () => {
         </div>
       )}
 
-      {/* SELLING PRICE CALCULATION */}
       {calculation && (
         <div className="card">
           <h3 className="card-header">💰 Selling Price Breakdown</h3>

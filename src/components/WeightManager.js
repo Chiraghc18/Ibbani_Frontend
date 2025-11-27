@@ -60,7 +60,7 @@ const WeightManager = () => {
   const deleteWeight = async (id) => {
     if (window.confirm('Are you sure you want to delete this weight entry?')) {
       try {
-        await API.delete(`/weight/${id}`);
+        await API.delete(`/api/weight/${id}`);
         await fetchWeights();
       } catch (error) {
         console.error('Error deleting weight:', error);
@@ -69,7 +69,6 @@ const WeightManager = () => {
     }
   };
 
-  // Calculate statistics
   const averageWeight = weights.length > 0 
     ? weights.reduce((sum, w) => sum + w.weight, 0) / weights.length 
     : 0;
@@ -124,7 +123,6 @@ const WeightManager = () => {
               required
             />
           </div>
-          
           <div className="form-group">
             <label className="form-label">Average Weight (kg):</label>
             <input
@@ -138,7 +136,6 @@ const WeightManager = () => {
             />
           </div>
         </div>
-        
         <div className="form-actions">
           <button type="submit" className="submit-btn" disabled={loading}>
             {loading ? '🔄 Saving...' : (editingId ? '📝 Update Weight Entry' : '➕ Add Weight Entry')}

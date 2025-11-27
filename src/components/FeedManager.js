@@ -62,7 +62,7 @@ const FeedManager = () => {
   const deleteFeed = async (id) => {
     if (window.confirm('Are you sure you want to delete this feed entry?')) {
       try {
-        await API.delete(`/feed/${id}`);
+        await API.delete(`/api/feed/${id}`);
         await fetchFeeds();
       } catch (error) {
         console.error('Error deleting feed:', error);
@@ -71,7 +71,6 @@ const FeedManager = () => {
     }
   };
 
-  // Calculate total feed cost
   const totalFeedCost = feeds.reduce((sum, feed) => sum + feed.cost, 0);
   const totalBirdsFed = feeds.reduce((sum, feed) => sum + feed.birds, 0);
 
@@ -113,7 +112,6 @@ const FeedManager = () => {
               required
             />
           </div>
-          
           <div className="form-group">
             <label className="form-label">Feed Cost (Rs):</label>
             <input
@@ -126,7 +124,6 @@ const FeedManager = () => {
               required
             />
           </div>
-          
           <div className="form-group">
             <label className="form-label">No of Birds Fed:</label>
             <input
@@ -139,7 +136,6 @@ const FeedManager = () => {
             />
           </div>
         </div>
-        
         <div className="form-actions">
           <button type="submit" className="submit-btn" disabled={loading}>
             {loading ? '🔄 Saving...' : (editingId ? '📝 Update Feed Entry' : '➕ Add Feed Entry')}

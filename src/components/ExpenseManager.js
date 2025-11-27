@@ -17,7 +17,7 @@ const ExpenseManager = () => {
 
   const fetchExpenses = async () => {
     try {
-      const response = await API.get('api/expenses');
+      const response = await API.get('/api/expenses');
       setExpenses(response.data);
     } catch (error) {
       console.error('Error fetching expenses:', error);
@@ -30,9 +30,9 @@ const ExpenseManager = () => {
     
     try {
       if (editingId) {
-        await API.put(`/api/expenses/${editingId}`, formData);
+        await API.put(`/expenses/${editingId}`, formData);
       } else {
-        await API.post('/api/expenses', formData);
+        await API.post('/expenses', formData);
       }
       await fetchExpenses();
       resetForm();

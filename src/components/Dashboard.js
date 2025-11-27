@@ -34,10 +34,8 @@ const Dashboard = ({ user, onLogout }) => {
       checkScroll();
     };
 
-    // Initial check
     setTimeout(checkScroll, 100);
 
-    // Add event listeners
     window.addEventListener('resize', handleResize);
     if (tabsRef.current) {
       tabsRef.current.addEventListener('scroll', checkScroll);
@@ -67,8 +65,7 @@ const Dashboard = ({ user, onLogout }) => {
       const { scrollLeft, scrollWidth, clientWidth } = tabsRef.current;
       setCanScrollLeft(scrollLeft > 0);
       setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 1);
-      
-      // Update container classes for CSS styling
+
       const container = tabsContainerRef.current;
       if (container) {
         container.classList.toggle('scroll-start', scrollLeft <= 0);
@@ -91,12 +88,11 @@ const Dashboard = ({ user, onLogout }) => {
             <button onClick={onLogout} className="logout-btn">Logout</button>
           </div>
         </div>
-        
+
         <div 
           className={`tabs-container ${showScrollIndicators ? 'mobile-visible' : ''}`}
           ref={tabsContainerRef}
         >
-          {/* Left Scroll Indicator */}
           {showScrollIndicators && canScrollLeft && (
             <button 
               className="tabs-scroll-indicator left mobile-visible"
@@ -107,7 +103,6 @@ const Dashboard = ({ user, onLogout }) => {
             </button>
           )}
 
-          {/* Right Scroll Indicator */}
           {showScrollIndicators && canScrollRight && (
             <button 
               className="tabs-scroll-indicator right mobile-visible"
