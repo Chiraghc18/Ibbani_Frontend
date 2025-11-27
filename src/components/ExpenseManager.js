@@ -17,7 +17,7 @@ const ExpenseManager = () => {
 
   const fetchExpenses = async () => {
     try {
-      const response = await API.get('/api/expenses');
+      const response = await API.get('/api/expenses');  // ✅ Fixed: Added /api/
       setExpenses(response.data);
     } catch (error) {
       console.error('Error fetching expenses:', error);
@@ -30,9 +30,9 @@ const ExpenseManager = () => {
     
     try {
       if (editingId) {
-        await API.put(`/expenses/${editingId}`, formData);
+        await API.put(`/api/expenses/${editingId}`, formData);  // ✅ Fixed: Added /api/
       } else {
-        await API.post('/expenses', formData);
+        await API.post('/api/expenses', formData);  // ✅ Fixed: Added /api/
       }
       await fetchExpenses();
       resetForm();
@@ -60,7 +60,7 @@ const ExpenseManager = () => {
   const deleteExpense = async (id) => {
     if (window.confirm('Are you sure you want to delete this expense?')) {
       try {
-        await API.delete(`/expenses/${id}`);
+        await API.delete(`/api/expenses/${id}`);  // ✅ Fixed: Added /api/
         await fetchExpenses();
       } catch (error) {
         console.error('Error deleting expense:', error);
