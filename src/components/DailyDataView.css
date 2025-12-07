@@ -8,19 +8,20 @@
   background: white;
   border-radius: 15px;
   padding: 25px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
   text-align: center;
+  border: 1px solid #dcedc8;
 }
 
 .daily-header h2 {
-  color: #333;
+  color: #2e7d32;
   font-size: 24px;
   font-weight: 700;
   margin-bottom: 10px;
 }
 
 .subtitle {
-  color: #666;
+  color: #689f38;
   font-size: 14px;
   font-weight: 500;
 }
@@ -29,9 +30,9 @@
   background: white;
   border-radius: 15px;
   padding: 25px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid #dcedc8;
 }
-
 .range-controls {
   display: flex;
   justify-content: space-between;
@@ -61,7 +62,7 @@
 .toggle-slider {
   width: 50px;
   height: 26px;
-  background: #e1e1e1;
+  background: #c8e6c9;
   border-radius: 13px;
   position: relative;
   transition: all 0.3s ease;
@@ -80,7 +81,7 @@
 }
 
 .toggle-input:checked + .toggle-slider {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #4caf50 0%, #388e3c 100%);
 }
 
 .toggle-input:checked + .toggle-slider:before {
@@ -90,13 +91,13 @@
 .toggle-text {
   font-size: 14px;
   font-weight: 600;
-  color: #333;
+  color: #33691e;
 }
 
 .full-range-btn {
-  background: #f8f9fa;
-  color: #666;
-  border: 2px solid #e1e1e1;
+  background: #f1f8e9;
+  color: #689f38;
+  border: 2px solid #c8e6c9;
   padding: 10px 20px;
   border-radius: 8px;
   font-size: 14px;
@@ -109,8 +110,9 @@
 }
 
 .full-range-btn:hover {
-  background: #e9ecef;
+  background: #dcedc8;
   transform: translateY(-2px);
+  border-color: #aed581;
 }
 
 .range-info {
@@ -121,11 +123,11 @@
 
 .range-info-item {
   font-size: 14px;
-  color: #666;
+  color: #689f38;
 }
 
 .range-info-item strong {
-  color: #333;
+  color: #33691e;
 }
 
 .date-inputs {
@@ -143,26 +145,28 @@
 
 .date-input {
   padding: 12px 15px;
-  border: 2px solid #e1e1e1;
+  border: 2px solid #c8e6c9;
   border-radius: 10px;
   font-size: 16px;
   transition: all 0.3s ease;
   width: 100%;
+  background: #f1f8e9;
 }
 
 .date-input:focus {
   outline: none;
-  border-color: #667eea;
-  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  border-color: #4caf50;
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+  background: white;
 }
 
 .date-input:disabled {
-  background: #f5f5f5;
+  background: #e8f5e9;
   cursor: not-allowed;
 }
 
 .refresh-btn {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #4caf50 0%, #388e3c 100%);
   color: white;
   border: none;
   padding: 12px 20px;
@@ -176,11 +180,13 @@
   justify-content: center;
   gap: 8px;
   height: 46px;
+  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
 }
 
 .refresh-btn:hover:not(:disabled) {
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+  box-shadow: 0 10px 25px rgba(76, 175, 80, 0.4);
+  background: linear-gradient(135deg, #66bb6a 0%, #43a047 100%);
 }
 
 .refresh-btn:disabled {
@@ -199,22 +205,24 @@
   background: white;
   border-radius: 12px;
   padding: 20px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
   display: flex;
   align-items: center;
   gap: 15px;
   transition: transform 0.3s ease;
+  border: 1px solid #dcedc8;
 }
 
 .summary-card:hover {
   transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
 }
 
 .summary-icon {
   font-size: 32px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  /* background: linear-gradient(135deg, #030303 0%, #388e3c 100%); */
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  /* -webkit-text-fill-color: transparent; */
   background-clip: text;
 }
 
@@ -225,20 +233,20 @@
 .summary-value {
   font-size: 24px;
   font-weight: 800;
-  color: #333;
+  color: #2e7d32;
   margin-bottom: 5px;
 }
 
 .summary-label {
   font-size: 14px;
-  color: #666;
+  color: #558b2f;
   font-weight: 600;
   margin-bottom: 3px;
 }
 
 .summary-subtext {
   font-size: 12px;
-  color: #999;
+  color: #81c784;
 }
 
 .efficiency-analysis {
@@ -257,26 +265,30 @@
   border-radius: 12px;
   padding: 20px;
   text-align: center;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
   border-top: 5px solid;
+  border: 1px solid #dcedc8;
 }
 
 .best-stat {
   border-top-color: #4caf50;
+  background: linear-gradient(135deg, rgba(76, 175, 80, 0.05) 0%, rgba(56, 142, 60, 0.05) 100%);
 }
 
 .average-stat {
-  border-top-color: #2196f3;
+  border-top-color: #ff9800;
+  background: linear-gradient(135deg, rgba(255, 152, 0, 0.05) 0%, rgba(245, 124, 0, 0.05) 100%);
 }
 
 .worst-stat {
   border-top-color: #f44336;
+  background: linear-gradient(135deg, rgba(244, 67, 54, 0.05) 0%, rgba(211, 47, 47, 0.05) 100%);
 }
 
 .efficiency-stat .stat-label {
   font-size: 16px;
   font-weight: 600;
-  color: #333;
+  color: #33691e;
   margin-bottom: 10px;
 }
 
@@ -284,11 +296,20 @@
   font-size: 24px;
   font-weight: 800;
   margin-bottom: 10px;
+  color: #2e7d32;
+}
+
+.worst-stat .stat-value {
+  color: #d32f2f;
+}
+
+.average-stat .stat-value {
+  color: #ff9800;
 }
 
 .efficiency-stat .stat-details {
   font-size: 14px;
-  color: #666;
+  color: #689f38;
   margin-bottom: 5px;
 }
 
@@ -302,7 +323,7 @@
 }
 
 .table-header h4 {
-  color: #333;
+  color: #33691e;
   font-size: 16px;
   font-weight: 600;
 }
@@ -318,7 +339,7 @@
   align-items: center;
   gap: 5px;
   font-size: 12px;
-  color: #666;
+  color: #689f38;
 }
 
 .legend-dot {
@@ -333,7 +354,7 @@
 }
 
 .average-eff {
-  background: #2196f3;
+  background: #ff9800;
 }
 
 .poor-eff {
@@ -346,7 +367,7 @@
 }
 
 .efficiency-table th {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #4caf50 0%, #388e3c 100%);
   color: white;
   padding: 15px;
   text-align: left;
@@ -358,8 +379,8 @@
 
 .efficiency-table td {
   padding: 12px;
-  border-bottom: 1px solid #eee;
-  color: #555;
+  border-bottom: 1px solid #e8f5e9;
+  color: #558b2f;
   font-size: 14px;
 }
 
@@ -369,7 +390,7 @@
 }
 
 .average-efficiency {
-  color: #2196f3;
+  color: #ff9800;
   font-weight: 600;
 }
 
@@ -391,16 +412,19 @@
 .badge-good {
   background: rgba(76, 175, 80, 0.1);
   color: #4caf50;
+  border: 1px solid #c8e6c9;
 }
 
 .badge-average {
-  background: rgba(33, 150, 243, 0.1);
-  color: #2196f3;
+  background: rgba(255, 152, 0, 0.1);
+  color: #ff9800;
+  border: 1px solid #ffe0b2;
 }
 
 .badge-poor {
   background: rgba(244, 67, 54, 0.1);
   color: #f44336;
+  border: 1px solid #ffcdd2;
 }
 
 .loading-indicator {
@@ -411,16 +435,17 @@
   padding: 40px;
   background: white;
   border-radius: 15px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
   gap: 20px;
+  border: 1px solid #dcedc8;
 }
 
 .loading-indicator .spinner {
   width: 50px;
   height: 50px;
-  border: 5px solid rgba(102, 126, 234, 0.2);
+  border: 5px solid rgba(76, 175, 80, 0.2);
   border-radius: 50%;
-  border-top-color: #667eea;
+  border-top-color: #4caf50;
   animation: spin 1s ease-in-out infinite;
 }
 
@@ -428,14 +453,15 @@
   background: white;
   border-radius: 15px;
   padding: 25px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
   margin-top: 20px;
+  border: 1px solid #dcedc8;
 }
 
 .table-scroll-container {
   overflow-x: auto;
   border-radius: 10px;
-  border: 1px solid #eee;
+  border: 1px solid #dcedc8;
   max-height: 600px;
   overflow-y: auto;
 }
@@ -447,7 +473,7 @@
 }
 
 .daily-data-table th {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #4caf50 0%, #388e3c 100%);
   color: white;
   padding: 15px;
   text-align: left;
@@ -460,18 +486,18 @@
 
 .daily-data-table td {
   padding: 12px;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #e8f5e9;
   font-size: 14px;
 }
 
 .date-cell {
   font-weight: 600;
-  color: #333;
+  color: #33691e;
   white-space: nowrap;
 }
 
 .day-cell {
-  color: #666;
+  color: #689f38;
   font-weight: 500;
   text-align: center;
 }
@@ -481,6 +507,7 @@
 .gain-cell {
   font-family: 'Courier New', monospace;
   font-weight: 500;
+  color: #558b2f;
 }
 
 .value-with-indicator {
@@ -490,7 +517,7 @@
 }
 
 .carry-indicator {
-  color: #999;
+  color: #a5d6a7;
   font-size: 12px;
   cursor: help;
 }
@@ -515,7 +542,7 @@
 }
 
 .zero {
-  color: #999;
+  color: #a5d6a7;
 }
 
 .negative {
@@ -531,40 +558,46 @@
   align-items: center;
   gap: 4px;
   white-space: nowrap;
+  border: 1px solid;
 }
 
 .status-both {
-  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
-  color: #667eea;
+  background: rgba(76, 175, 80, 0.1);
+  color: #4caf50;
+  border-color: #c8e6c9;
 }
 
 .status-feed {
   background: rgba(255, 193, 7, 0.1);
   color: #ff9800;
+  border-color: #ffe0b2;
 }
 
 .status-weight {
   background: rgba(76, 175, 80, 0.1);
   color: #4caf50;
+  border-color: #c8e6c9;
 }
 
 .status-carry-gain {
   background: rgba(156, 39, 176, 0.1);
   color: #9c27b0;
+  border-color: #e1bee7;
 }
 
 .status-carry {
   background: rgba(158, 158, 158, 0.1);
   color: #757575;
+  border-color: #e0e0e0;
 }
 
 /* Row colors */
 .new-data-row {
-  background: rgba(102, 126, 234, 0.05) !important;
+  background: rgba(76, 175, 80, 0.05) !important;
 }
 
 .new-data-row:hover {
-  background: rgba(102, 126, 234, 0.1) !important;
+  background: rgba(76, 175, 80, 0.1) !important;
 }
 
 .carried-gain-row {
@@ -590,11 +623,11 @@
 }
 
 .new-data {
-  background: #667eea;
+  background: #4caf50;
 }
 
 .positive-gain {
-  background: #4caf50;
+  /* background: #4caf50; */
 }
 
 .no-gain {
@@ -605,12 +638,13 @@
   background: white;
   border-radius: 15px;
   padding: 25px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
   margin-top: 20px;
+  border: 1px solid #dcedc8;
 }
 
 .explanation-card h4 {
-  color: #333;
+  color: #33691e;
   font-size: 18px;
   font-weight: 600;
   margin-bottom: 15px;
@@ -628,14 +662,14 @@
   padding: 8px 0;
   padding-left: 25px;
   position: relative;
-  color: #666;
+  color: #689f38;
   font-size: 14px;
   line-height: 1.5;
 }
 
 .explanation-list li:before {
   content: '•';
-  color: #667eea;
+  color: #4caf50;
   font-weight: bold;
   position: absolute;
   left: 0;
@@ -643,7 +677,7 @@
 }
 
 .explanation-list li strong {
-  color: #333;
+  color: #33691e;
   font-weight: 600;
 }
 

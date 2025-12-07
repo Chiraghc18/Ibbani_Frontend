@@ -4,7 +4,7 @@
   justify-content: center;
   min-height: 100vh;
   padding: 20px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #2e7d32 0%, #1b5e20 100%);
 }
 
 .auth-card {
@@ -13,8 +13,9 @@
   padding: 40px;
   width: 100%;
   max-width: 450px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
   animation: slideUp 0.5s ease-out;
+  border: 1px solid #c8e6c9;
 }
 
 @keyframes slideUp {
@@ -32,11 +33,12 @@
   font-size: 64px;
   text-align: center;
   margin-bottom: 10px;
+  color: #388e3c;
 }
 
 .auth-title {
   text-align: center;
-  color: #333;
+  color: #2e7d32;
   font-size: 32px;
   margin-bottom: 5px;
   font-weight: 700;
@@ -44,7 +46,7 @@
 
 .auth-subtitle {
   text-align: center;
-  color: #666;
+  color: #689f38;
   font-size: 14px;
   margin-bottom: 30px;
   font-weight: 500;
@@ -65,41 +67,43 @@
 .form-label {
   font-size: 14px;
   font-weight: 600;
-  color: #333;
+  color: #33691e;
 }
 
 .form-input {
   padding: 12px 16px;
-  border: 2px solid #e1e1e1;
+  border: 2px solid #c8e6c9;
   border-radius: 10px;
   font-size: 16px;
   transition: all 0.3s ease;
+  background: #f1f8e9;
 }
 
 .form-input:focus {
   outline: none;
-  border-color: #667eea;
-  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  border-color: #4caf50;
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+  background: white;
 }
 
 .password-hint {
   font-size: 12px;
-  color: #888;
+  color: #689f38;
   margin-top: 4px;
 }
 
 .error-message {
-  background: #fee;
-  color: #c33;
+  background: #ffebee;
+  color: #c62828;
   padding: 12px;
   border-radius: 8px;
-  border: 1px solid #fcc;
+  border: 1px solid #ffcdd2;
   font-size: 14px;
   margin-top: 10px;
 }
 
 .auth-btn {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #4caf50 0%, #388e3c 100%);
   color: white;
   border: none;
   padding: 14px;
@@ -109,11 +113,13 @@
   cursor: pointer;
   transition: all 0.3s ease;
   margin-top: 10px;
+  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
 }
 
 .auth-btn:hover:not(:disabled) {
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+  box-shadow: 0 10px 25px rgba(76, 175, 80, 0.4);
+  background: linear-gradient(135deg, #66bb6a 0%, #43a047 100%);
 }
 
 .auth-btn:disabled {
@@ -124,19 +130,19 @@
 .auth-info {
   margin-top: 30px;
   padding: 20px;
-  background: #f8f9fa;
+  background: #f1f8e9;
   border-radius: 10px;
-  border: 1px solid #e9ecef;
+  border: 1px solid #dcedc8;
 }
 
 .auth-info h3 {
-  color: #333;
+  color: #33691e;
   margin-bottom: 10px;
   font-size: 16px;
 }
 
 .auth-info p {
-  color: #666;
+  color: #689f38;
   font-size: 14px;
   line-height: 1.5;
   margin-bottom: 5px;

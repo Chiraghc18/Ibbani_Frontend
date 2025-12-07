@@ -1,15 +1,16 @@
 .dashboard {
   min-height: 100vh;
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
 }
 
 .dashboard-header {
   background: white;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   position: sticky;
   top: 0;
   z-index: 100;
   padding: 15px 0;
+  border-bottom: 3px solid #4caf50;
 }
 
 .header-content {
@@ -23,7 +24,7 @@
 }
 
 .header-content h1 {
-  color: #333;
+  color: #2e7d32;
   font-size: 24px;
   font-weight: 700;
 }
@@ -33,15 +34,15 @@
   align-items: center;
   gap: 20px;
   font-size: 14px;
-  color: #666;
+  color: #689f38;
 }
 
 .user-info strong {
-  color: #333;
+  color: #33691e;
 }
 
 .logout-btn {
-  background: linear-gradient(135deg, #ff6b6b 0%, #ff4757 100%);
+  background: linear-gradient(135deg, #f44336 0%, #d32f2f 100%);
   color: white;
   border: none;
   padding: 8px 20px;
@@ -50,11 +51,12 @@
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(244, 67, 54, 0.3);
 }
 
 .logout-btn:hover {
   transform: translateY(-1px);
-  box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+  box-shadow: 0 5px 15px rgba(244, 67, 54, 0.4);
 }
 
 .tabs-container {
@@ -69,7 +71,7 @@
   gap: 10px;
   overflow-x: auto;
   scrollbar-width: thin;
-  scrollbar-color: #667eea transparent;
+  scrollbar-color: #4caf50 transparent;
   padding: 5px 0;
   -ms-overflow-style: none;
   scroll-behavior: smooth;
@@ -80,29 +82,30 @@
 }
 
 .tabs::-webkit-scrollbar-track {
-  background: transparent;
+  background: #e8f5e9;
+  border-radius: 3px;
 }
 
 .tabs::-webkit-scrollbar-thumb {
-  background-color: #667eea;
+  background-color: #4caf50;
   border-radius: 3px;
 }
 
 .tabs::-webkit-scrollbar-thumb:hover {
-  background-color: #764ba2;
+  background-color: #388e3c;
 }
 
 .tab {
   display: flex;
   align-items: center;
   gap: 8px;
-  background: #f8f9fa;
+  background: #f1f8e9;
   border: 2px solid transparent;
   padding: 12px 20px;
   border-radius: 12px;
   font-size: 14px;
   font-weight: 600;
-  color: #666;
+  color: #689f38;
   cursor: pointer;
   white-space: nowrap;
   transition: all 0.3s ease;
@@ -110,15 +113,15 @@
 }
 
 .tab:hover {
-  background: #e9ecef;
-  color: #333;
+  background: #dcedc8;
+  color: #33691e;
 }
 
 .tab.active {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #4caf50 0%, #388e3c 100%);
   color: white;
-  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
-  border-color: #667eea;
+  box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+  border-color: #4caf50;
 }
 
 .tab-icon {
@@ -130,7 +133,7 @@
   top: 50%;
   transform: translateY(-50%);
   background: white;
-  border: none;
+  border: 2px solid #4caf50;
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -138,9 +141,9 @@
   align-items: center;
   justify-content: center;
   font-size: 18px;
-  color: #667eea;
+  color: #4caf50;
   cursor: pointer;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
   z-index: 10;
   opacity: 0;
   transition: all 0.3s ease;
@@ -159,8 +162,9 @@
 }
 
 .tabs-scroll-indicator:hover {
-  background: #667eea;
+  background: #4caf50;
   color: white;
+  border-color: #388e3c;
 }
 
 .dashboard-content {
