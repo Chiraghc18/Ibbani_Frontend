@@ -3,6 +3,7 @@ import FeedManager from './FeedManager';
 import WeightManager from './WeightManager';
 import ExpenseManager from './ExpenseManager';
 import PriceCalculator from './PriceCalculator';
+import DailyDataView from './DailyDataView'; // Import the DailyDataView component
 import './Dashboard.css';
 
 const Dashboard = ({ user, onLogout }) => {
@@ -14,11 +15,12 @@ const Dashboard = ({ user, onLogout }) => {
   const tabsContainerRef = useRef(null);
 
   const tabs = [
-    { id: 'calculator', label: 'Price Calculator', icon: '💰' },
-    { id: 'feed', label: 'Feed Management', icon: '🍽️' },
-    { id: 'weight', label: 'Weight Management', icon: '⚖️' },
-    { id: 'expenses', label: 'Expenses', icon: '📊' }
-  ];
+  { id: 'calculator', label: 'Price Calculator', icon: '💰' },
+  { id: 'daily', label: 'Daily Data', icon: '📊' }, // Add this line
+  { id: 'feed', label: 'Feed Management', icon: '🍽️' },
+  { id: 'weight', label: 'Weight Management', icon: '⚖️' },
+  { id: 'expenses', label: 'Expenses', icon: '📊' }
+];
 
   useEffect(() => {
     const checkScroll = () => {
@@ -133,11 +135,12 @@ const Dashboard = ({ user, onLogout }) => {
       </header>
 
       <main className="dashboard-content">
-        {activeTab === 'calculator' && <PriceCalculator />}
-        {activeTab === 'feed' && <FeedManager />}
-        {activeTab === 'weight' && <WeightManager />}
-        {activeTab === 'expenses' && <ExpenseManager />}
-      </main>
+  {activeTab === 'calculator' && <PriceCalculator />}
+  {activeTab === 'daily' && <DailyDataView />} {/* Add this line */}
+  {activeTab === 'feed' && <FeedManager />}
+  {activeTab === 'weight' && <WeightManager />}
+  {activeTab === 'expenses' && <ExpenseManager />}
+</main>
     </div>
   );
 };
